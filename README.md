@@ -333,5 +333,5 @@ Edit the Google Fonts import in `app/globals.css` and update `tailwind.config.js
 
 ## 📞 Support
 
-Built by Claude (Anthropic) for Md Mamunur Rashid.
+Built by Md Mamunur Rashid.
 LinkedIn: https://www.linkedin.com/in/webdevmamun/
