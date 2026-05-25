@@ -2,6 +2,7 @@
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import Providers from '@/components/Providers'
+import ThemeProvider from '@/components/ui/ThemeProvider'
 
 export const metadata = {
   title: 'Md Mamunur Rashid | Portfolio',
@@ -10,21 +11,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="noise">
-        <Providers>
-          {children}
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              style: {
-                background: '#16161f',
-                color: '#e2e8f0',
-                border: '1px solid #1e1e2e',
-              },
-            }}
-          />
-        </Providers>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>
+          <Providers>
+            {children}
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                style: {
+                  background: 'var(--card-bg)',
+                  color: 'var(--text-primary)',
+                  border: '1px solid var(--border-color)',
+                },
+              }}
+            />
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   )
