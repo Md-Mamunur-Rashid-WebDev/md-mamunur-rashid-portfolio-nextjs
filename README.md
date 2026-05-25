@@ -186,15 +186,6 @@ npx prisma generate
 npm run db:seed
 ```
 
-This creates:
-- ✅ Admin user: `admin@portfolio.com` / `admin123`
-- ✅ Your profile info
-- ✅ All skills (Salesforce, Frontend, Backend, WordPress)
-- ✅ Sample projects
-- ✅ All services
-
----
-
 ### Step 8 — Start the dev server
 
 ```bash
@@ -205,18 +196,6 @@ Open **http://localhost:3000** — your portfolio is live locally!
 
 ---
 
-## 🔐 Dashboard Access
-
-Go to **http://localhost:3000/login**
-
-```
-Email:    admin@portfolio.com
-Password: admin123
-```
-
-> ⚠️ Change these immediately after first login via **Dashboard → Settings**
-
----
 
 ## 📋 Dashboard Pages
 

@@ -1,0 +1,78 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  id        Int      @id @default(autoincrement())
+  name      String   @default("Md Mamunur Rashid")
+  title     String   @default("Salesforce Admin & Developer | Frontend Developer")
+  bio       String   @default("Hi, I'm Mamun — a creative and detail-oriented Frontend Developer, WordPress Designer, and certified Salesforce Technical Consultant with over 3 years of experience.")
+  photo     String   @default("/images/profile.png")
+  email     String   @default("your@email.com")
+  phone     String   @default("+880 1234 567890")
+  location  String   @default("Dhaka, Bangladesh")
+  linkedin  String   @default("https://www.linkedin.com/in/webdevmamun/")
+  github    String   @default("https://github.com/Md-Mamunur-Rashid-WebDev")
+  facebook  String   @default("https://www.facebook.com/mamun1064/")
+  resumeUrl String   @default("#")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Skill {
+  id        Int      @id @default(autoincrement())
+  name      String
+  category  String   // "Salesforce" | "Frontend" | "Backend" | "WordPress"
+  icon      String   @default("")
+  level     Int      @default(80) // 0-100 percentage
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  image       String   @default("")
+  tags        String[] // Array of tech tags
+  liveUrl     String   @default("")
+  githubUrl   String   @default("")
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Service {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  icon        String   @default("FaCode")
+  points      String[] // Array of bullet points
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
