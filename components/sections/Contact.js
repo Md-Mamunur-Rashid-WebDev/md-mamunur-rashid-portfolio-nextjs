@@ -45,7 +45,7 @@ export default function Contact({ profile }) {
 
   return (
     <section id="contact" className="section" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto p-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
